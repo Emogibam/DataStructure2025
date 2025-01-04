@@ -11,20 +11,18 @@ namespace Arrays
 
         public int Length => _size;
 
-        // Constructor to initialize the array with a specific capacity
         public CustomArray(int capacity)
         {
             _array = new T[capacity];
             _size = 0;
         }
 
-        // Add an element to the array
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
         public void Add(T item)
         {
-            if (_size == _array.Length)
-            {
-                Resize(_array.Length * 2); // Double the size of the array
-            }
             _array[_size++] = item;
         }
 
@@ -113,5 +111,13 @@ namespace Arrays
         {
             return GetEnumerator();
         }
+
+        public T[] ToArray()
+        {
+            T[] newArray = new T[_size];
+            Array.Copy(_array, newArray, _size);
+            return newArray;
+        }
+
     }
 }
