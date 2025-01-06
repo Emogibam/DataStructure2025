@@ -61,7 +61,9 @@ namespace LinkedList
             }
             return false;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void Reverse()
         {
             Node<T>? prev = null;
