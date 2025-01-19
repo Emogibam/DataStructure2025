@@ -11,6 +11,10 @@ namespace LinkedList
     {
         private Node<T>? head;
 
+        /// <summary>
+        /// Inserts data into the SinglyLinkedList
+        /// </summary>
+        /// <param name="data"></param>
         public void Insert(T data)
         {
             var newNode = new Node<T>(data);
