@@ -21,6 +21,10 @@ public class DynamicArray<T>
     public int Count => _count;
     public int Capacity => _capacity;
 
+    /// <summary>
+    /// adding Item to Array
+    /// </summary>
+    /// <param name="item"></param>
     public void Add(T item)
     {
         if (_count == _capacity)
@@ -30,6 +34,12 @@ public class DynamicArray<T>
         _array[_count++] = item;
     }
 
+    /// <summary>
+    /// Insert an Item in an Array
+    /// </summary>
+    /// <param name="index"></param>
+    /// <param name="item"></param>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
     public void Insert(int index, T item)
     {
         if (index < 0 || index > _count)
@@ -51,6 +61,11 @@ public class DynamicArray<T>
         _count++;
     }
 
+    /// <summary>
+    /// Removing Item at the Index
+    /// </summary>
+    /// <param name="index"></param>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
     public void RemoveAt(int index)
     {
         if (index < 0 || index >= _count)
@@ -71,6 +86,12 @@ public class DynamicArray<T>
         }
     }
 
+    /// <summary>
+    /// Getting an Item at an Index
+    /// </summary>
+    /// <param name="index"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
     public T Get(int index)
     {
         if (index < 0 || index >= _count)
@@ -81,6 +102,10 @@ public class DynamicArray<T>
         return _array[index];
     }
 
+    /// <summary>
+    /// Resizing the array to meet Items added
+    /// </summary>
+    /// <param name="newCapacity"></param>
     private void Resize(int newCapacity)
     {
         T[] newArray = new T[newCapacity];
